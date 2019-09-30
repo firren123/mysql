@@ -40,45 +40,6 @@ services: #服务
 #        entrypoint:
 #            - /bin/bash
 #            - /usr/local/src/mysql.sh
-    mysql-3:
-        image: firren/mysql:5.7.27
-        container_name: mysql-3
-        networks:
-            redis-network: #网络名称
-                ipv4_address: 192.168.5.13  #设置IP地址
-        stdin_open: true # 标准输入输出
-        tty: true #标准输入输出 （和stdin_open成对出现）
-#        user: mysql
-
-        ports:
-            - "3310:3306"
-        environment:
-            - MYSQL_ROOT_PASSWORD=root
-            - SERVER_ID=13
-        volumes:
-            - /Users/lichenjun/www/liuxin/mysql1909/mysql5.7.27/sh:/usr/local/src
-#        entrypoint:
-#            - /bin/bash
-#            - /usr/local/src/mysql.sh
-    mysql-4:
-        image: firren/mysql:5.7.27
-        container_name: mysql-4
-        networks:
-            redis-network: #网络名称
-                ipv4_address: 192.168.5.14  #设置IP地址
-        stdin_open: true # 标准输入输出
-        tty: true #标准输入输出 （和stdin_open成对出现）
-#        user: mysql
-        ports:
-            - "3311:3306"
-        environment:
-            - MYSQL_ROOT_PASSWORD=root
-            - SERVER_ID=14
-        volumes:
-            - /Users/lichenjun/www/liuxin/mysql1909/mysql5.7.27/sh:/usr/local/src
-#        entrypoint:
-#            - /bin/bash
-#            - /usr/local/src/mysql.sh
 networks:
     redis-network:
         driver: bridge
